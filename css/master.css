@@ -1,0 +1,24 @@
+/* SITEWIDE --------------------------------------------------------- */
+:root {
+  --text-color-black: #2B2E40;
+  --text-color-grey: #535565;
+  --box-color-light-grey: #C0C1C0;
+  --border-color-light-grey: #E6E6E6;
+  --background-color-light-grey: #F8F9F8;
+  --debugging-grey: #CCCCCC;
+  --white: #FFFFFF;
+}
+
+body {
+  padding: 30px;
+  background-color: var(--background-color-light-grey);
+  color: var(--text-color-black);
+  text-align: center;
+}
+
+.col-sm {
+  border: 1px solid var(--border-color-light-grey);
+  border-radius: 5px;
+  background-color: var(--white);
+  margin: 0px 10px;
+}
