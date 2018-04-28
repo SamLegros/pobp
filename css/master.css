@@ -14,11 +14,14 @@ body {
   background-color: var(--background-color-light-grey);
   color: var(--text-color-black);
   text-align: center;
+  margin: 0 auto;
 }
 
-.col-sm {
-  border: 1px solid var(--border-color-light-grey);
-  border-radius: 5px;
-  background-color: var(--white);
-  margin: 0px 10px;
+.img-responsive {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.filtr-active {
+  color: red;
 }

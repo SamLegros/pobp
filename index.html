@@ -12,24 +12,116 @@
 </head>
 <body>
   <h1 class="display-4">POBP</h1>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm">
-        One of three columns
-      </div>
-      <div class="col-sm">
-        One of three columns
-      </div>
-      <div class="col-sm">
-        One of three columns
-      </div>
-    </div>
+
+  <!-- Navigation items -->
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-filter="all">All</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-filter="1">Free</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-filter="2">Paid</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-filter="3">CSS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-filter="4">Backend</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-filter="5">FrontEnd</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-filter="6">JavaScript</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-filter="7">Hosting</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-filter="8">HTML</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-filter="9">PHP</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-filter="10">Software</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-filter="11">Hardware</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-filter="12">jQuery</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-filter="13">SQL</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-filter="14">Reference</a>
+    </li>
+  </ul>
+
+  <!-- Old nav -->
+  <!-- <ul class="navbar-nav">
+  <li class="filtr-button filtr filtr-active" data-filter="all">All</li>
+  <li class="filtr-button filtr" data-filter="1">Free</li>
+  <li class="filtr-button filtr" data-filter="2">Paid</li>
+  <li class="filtr-button filtr" data-filter="3">CSS</li>
+  <li class="filtr-button filtr" data-filter="4">Backend</li>
+  <li class="filtr-button filtr" data-filter="5">Frontend</li>
+  <li class="filtr-button filtr" data-filter="6">JavaScript</li>
+  <li class="filtr-button filtr" data-filter="7">Hosting</li>
+  <li class="filtr-button filtr" data-filter="8">HTML</li>
+  <li class="filtr-button filtr" data-filter="9">PHP</li>
+  <li class="filtr-button filtr" data-filter="10">Software</li>
+  <li class="filtr-button filtr" data-filter="11">Hardware</li>
+  <li class="filtr-button filtr" data-filter="12">jQuery</li>
+  <li class="filtr-button filtr" data-filter="13">SQL</li>
+  <li class="filtr-button filtr" data-filter="14">Reference</li>
+</ul> -->
+
+<div class="container">
+  <button class="filtr-button filtr-shuffle" data-shuffle>Shuffle</button>
+  <ul class="nav">
+    <li class="filtr-button filtr-sort filtr-active filtr" data-sortAsc>Asc</li>
+    <li class="filtr-button filtr-sort filtr" data-sortDesc>Desc</li>
+  </ul>
+  <select class="select-order" data-sortOrder>
+    <option value="domIndex">
+      Position
+    </option>
+    <option value="sortData">
+      Description
+    </option>
+  </select>
+  <input type="text" name="filtr-search" class="filtr-search" value="" placeholder="Your search" data-search>
+</div>
+
+<div class="row container filtr-container">
+  <div class="col-xs-6 col-sm-4 col-md-3 filtr-item" data-category="1, 3, 5, 6, 8, 10, 12" data-sort="Bootstrap">
+    <img class="img-responsive" src="img/bootstrap.png" alt="bootstrap">
+    <span class="item-desc">Bootstrap</span>
   </div>
-  <!-- Hosted Bootstrap jQuery, Popper.js, and JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-  <!-- Local JavaScript -->
-  <script type="text/jscript" src="js/script.js"></script>
+  <div class="col-xs-6 col-sm-4 col-md-3 filtr-item" data-category="2, 5" data-sort="Luminous night">
+    <img class="img-responsive" src="img/sample.png" alt="sample image">
+    <span class="item-desc">Filterizr</span>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 filtr-item" data-category="1, 4" data-sort="City wonders">
+    <img class="img-responsive" src="img/sample.png" alt="sample image">
+    <span class="item-desc">Google Maps API</span>
+  </div>
+</div>
+
+<!-- Hosted Bootstrap jQuery, Popper.js, and JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<!-- Local Filterizr -->
+<script src="vendor/Filterizr-master/dist/jquery.filterizr.min.js"></script>
+<!-- Local JavaScript -->
+<script type="text/jscript" src="js/script.js"></script>
+<!-- LiveReload -->
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
 </html>
