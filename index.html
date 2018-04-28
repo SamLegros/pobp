@@ -9,119 +9,327 @@
   <!-- Local CSS -->
   <link rel="stylesheet" href="css/master.css">
   <title>POBP</title>
+  <!-- POBP refers to the book 'Program or be Programmed' written by Douglas Rushkoff -->
 </head>
 <body>
+
   <h1 class="display-4">POBP</h1>
 
   <!-- Navigation items -->
-  <ul class="nav justify-content-center">
+  <ul class="nav justify-content-center" id="my-nav">
     <li class="nav-item">
-      <a class="nav-link" href="#" data-filter="all">All</a>
+      <a class="nav-link" href="#" data-filter="all" id="nav-0">All</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-filter="1">Free</a>
+      <a class="nav-link" href="#" data-filter="1" id="nav-1">Free</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-filter="2">Paid</a>
+      <a class="nav-link" href="#" data-filter="2" id="nav-2">Paid</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-filter="3">CSS</a>
+      <a class="nav-link" href="#" data-filter="3" id="nav-3">CSS</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-filter="4">Backend</a>
+      <a class="nav-link" href="#" data-filter="4" id="nav-4">Backend</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-filter="5">FrontEnd</a>
+      <a class="nav-link" href="#" data-filter="5" id="nav-5">Frontend</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-filter="6">JavaScript</a>
+      <a class="nav-link" href="#" data-filter="6" id="nav-6">JavaScript</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-filter="7">Hosting</a>
+      <a class="nav-link" href="#" data-filter="7" id="nav-7">Hosting</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-filter="8">HTML</a>
+      <a class="nav-link" href="#" data-filter="8" id="nav-8">HTML</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-filter="9">PHP</a>
+      <a class="nav-link" href="#" data-filter="9" id="nav-9">PHP</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-filter="10">Software</a>
+      <a class="nav-link" href="#" data-filter="10" id="nav-10">Software</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-filter="11">Hardware</a>
+      <a class="nav-link" href="#" data-filter="11" id="nav-11">Hardware</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-filter="12">jQuery</a>
+      <a class="nav-link" href="#" data-filter="12" id="nav-12">jQuery</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-filter="13">SQL</a>
+      <a class="nav-link" href="#" data-filter="13" id="nav-13">SQL</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-filter="14">Reference</a>
+      <a class="nav-link" href="#" data-filter="14" id="nav-14">Reference</a>
     </li>
   </ul>
 
-  <!-- Old nav -->
-  <!-- <ul class="navbar-nav">
-  <li class="filtr-button filtr filtr-active" data-filter="all">All</li>
-  <li class="filtr-button filtr" data-filter="1">Free</li>
-  <li class="filtr-button filtr" data-filter="2">Paid</li>
-  <li class="filtr-button filtr" data-filter="3">CSS</li>
-  <li class="filtr-button filtr" data-filter="4">Backend</li>
-  <li class="filtr-button filtr" data-filter="5">Frontend</li>
-  <li class="filtr-button filtr" data-filter="6">JavaScript</li>
-  <li class="filtr-button filtr" data-filter="7">Hosting</li>
-  <li class="filtr-button filtr" data-filter="8">HTML</li>
-  <li class="filtr-button filtr" data-filter="9">PHP</li>
-  <li class="filtr-button filtr" data-filter="10">Software</li>
-  <li class="filtr-button filtr" data-filter="11">Hardware</li>
-  <li class="filtr-button filtr" data-filter="12">jQuery</li>
-  <li class="filtr-button filtr" data-filter="13">SQL</li>
-  <li class="filtr-button filtr" data-filter="14">Reference</li>
-</ul> -->
-
-<div class="container">
-  <button class="filtr-button filtr-shuffle" data-shuffle>Shuffle</button>
-  <ul class="nav">
-    <li class="filtr-button filtr-sort filtr-active filtr" data-sortAsc>Asc</li>
-    <li class="filtr-button filtr-sort filtr" data-sortDesc>Desc</li>
-  </ul>
-  <select class="select-order" data-sortOrder>
-    <option value="domIndex">
-      Position
-    </option>
-    <option value="sortData">
-      Description
-    </option>
-  </select>
-  <input type="text" name="filtr-search" class="filtr-search" value="" placeholder="Your search" data-search>
-</div>
-
-<div class="row container filtr-container">
-  <div class="col-xs-6 col-sm-4 col-md-3 filtr-item" data-category="1, 3, 5, 6, 8, 10, 12" data-sort="Bootstrap">
-    <img class="img-responsive" src="img/bootstrap.png" alt="bootstrap">
-    <span class="item-desc">Bootstrap</span>
+  <!-- Filter Functions -->
+  <div class="container">
+    <div class="row my-features">
+      <div class="col-xs-6 col-sm-5 col-md-4">
+        <div class="input-group mb-3 my-search">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Search</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" data-search>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-5 col-md-4">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active" data-sortAsc>
+            <input type="radio" name="options" id="option1" autocomplete="off" checked>Ascending
+          </label>
+          <label class="btn btn-secondary" data-sortDesc>
+            <input type="radio" name="options" id="option2" autocomplete="off">Descending
+          </label>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-5 col-md-4">
+        <button type="button" class="btn btn-success" data-shuffle>Shuffle</button>
+      </div>
+    </div>
   </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 filtr-item" data-category="2, 5" data-sort="Luminous night">
-    <img class="img-responsive" src="img/sample.png" alt="sample image">
-    <span class="item-desc">Filterizr</span>
-  </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 filtr-item" data-category="1, 4" data-sort="City wonders">
-    <img class="img-responsive" src="img/sample.png" alt="sample image">
-    <span class="item-desc">Google Maps API</span>
-  </div>
-</div>
 
-<!-- Hosted Bootstrap jQuery, Popper.js, and JavaScript -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-<!-- Local Filterizr -->
-<script src="vendor/Filterizr-master/dist/jquery.filterizr.min.js"></script>
-<!-- Local JavaScript -->
-<script type="text/jscript" src="js/script.js"></script>
-<!-- LiveReload -->
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+  <hr>
+
+  <!-- Page Items -->
+  <div class="row container-fluid filtr-container">
+    <a href="https://getbootstrap.com/" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 3, 5, 6, 8, 10, 12" data-sort="Bootstrap">
+        <div class="my-item">
+          <img class="img-responsive" src="img/bootstrap.png" alt="Bootstrap">
+          <span class="item-desc">Bootstrap</span>
+        </div>
+      </div>
+    </a>
+    <a href="http://yiotis.net/filterizr/" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 3, 5, 6, 8, 10, 12" data-sort="Filterizr">
+        <div class="my-item">
+          <img class="img-responsive" src="img/filterizr.png" alt="Filterizr">
+          <span class="item-desc">Filterizr</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://developers.google.com/maps/" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 2, 3, 5, 6, 8, 10" data-sort="Google Maps API">
+        <div class="my-item">
+          <img class="img-responsive" src="img/google_maps_api.png" alt="Google Maps API">
+          <span class="item-desc">Google Maps API</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://www.imagemagick.org/script/index.php" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 4, 9, 10" data-sort="ImageMagick">
+        <div class="my-item">
+          <img class="img-responsive" src="img/imagemagick.jpg" alt="ImageMagick">
+          <span class="item-desc">ImageMagick</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://davidwalsh.name/php-shorthand-if-else-ternary-operators" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 4, 9, 10, 14" data-sort="PHP Shorthand If/Else Using Ternary Operators">
+        <div class="my-item">
+          <img class="img-responsive" src="img/php_shorthand_operators.png" alt="PHP Shorthand If/Else Using Ternary Operators">
+          <span class="item-desc">PHP Shorthand If/Else Using Ternary Operators</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://www.vuemastery.com/courses/intro-to-vue-js" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 5, 6, 8, 10, 14" data-sort="The ultimate learning resource for Vue developers">
+        <div class="my-item">
+          <img class="img-responsive" src="img/ultimate_learning_resource_vuejs.png" alt="The ultimate learning resource for Vue developers">
+          <span class="item-desc">The ultimate learning resource for Vue developers</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://www.bootstrap-live-customizer.com/" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 3, 5, 6, 8, 10, 12" data-sort="Bootstrap Live Customizer">
+        <div class="my-item">
+          <img class="img-responsive" src="img/bootstrap_live_customizer.png" alt="Bootstrap Live Customizer">
+          <span class="item-desc">Bootstrap Live Customizer</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://github.com/ondras/wwwsqldesigner" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 4, 10, 13" data-sort="WWW SQL Designer">
+        <div class="my-item">
+          <img class="img-responsive" src="img/www_sql_designer.png" alt="WWW SQL Designer">
+          <span class="item-desc">WWW SQL Designer</span>
+        </div>
+      </div>
+    </a>
+    <a href="http://sisyphus-js.herokuapp.com/" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 5, 6, 8, 10, 12" data-sort="Sisyphus.js">
+        <div class="my-item">
+          <img class="img-responsive" src="img/sisyphus.jpg" alt="Sisyphus.js">
+          <span class="item-desc">Sisyphus.js</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://sendgrid.com/" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="2, 4, 7, 10" data-sort="SendGrid">
+        <div class="my-item">
+          <img class="img-responsive" src="img/sendgrid.png" alt="SendGrid">
+          <span class="item-desc">SendGrid</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://genius.com/web-annotator" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 5, 6, 8, 10" data-sort="Web Annotator">
+        <div class="my-item">
+          <img class="img-responsive" src="img/web_annotator.png" alt="Web Annotator">
+          <span class="item-desc">Web Annotator</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://lawsofux.com/" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 5, 14" data-sort="Laws of UX">
+        <div class="my-item">
+          <img class="img-responsive" src="img/laws_of_ux.png" alt="Laws of UX">
+          <span class="item-desc">Laws of UX</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://www.ntu.edu.sg/home/ehchua/programming/sql/Relational_Database_Design.html" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 4, 10, 13, 14" data-sort="A Quick-Start Tutorial on Relational Database Design">
+        <div class="my-item">
+          <img class="img-responsive" src="img/sql_getting_started.png" alt="A Quick-Start Tutorial on Relational Database Design">
+          <span class="item-desc">A Quick-Start Tutorial on Relational Database Design</span>
+        </div>
+      </div>
+    </a>
+    <a href="http://visjs.org/" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 3, 5, 6, 8, 10" data-sort="Vis.js">
+        <div class="my-item">
+          <img class="img-responsive" src="img/visjs.png" alt="Vis.js">
+          <span class="item-desc">Vis.js</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://d3js.org/" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 3, 5, 6, 8, 10" data-sort="D3.js">
+        <div class="my-item">
+          <img class="img-responsive" src="img/d3js.png" alt="D3.js">
+          <span class="item-desc">D3.js</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://medium.freecodecamp.org/everything-you-need-to-know-about-css-variables-c74d922ea855" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 3, 5, 6, 8, 10, 14" data-sort="Everything you need to know about CSS Variables">
+        <div class="my-item">
+          <img class="img-responsive" src="img/everything_on_css_variables.png" alt="Everything you need to know about CSS Variables">
+          <span class="item-desc">Everything you need to know about CSS Variables</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 3, 5, 8, 10, 14" data-sort="A Complete Guide to Flexbox">
+        <div class="my-item">
+          <img class="img-responsive" src="img/flexbox_guide.png" alt="A Complete Guide to Flexbox">
+          <span class="item-desc">A Complete Guide to Flexbox</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://medium.freecodecamp.org/learn-css-flexbox-in-5-minutes-b941f0affc34" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 3, 5, 8, 10, 14" data-sort="Learn CSS Flexbox in 5 Minutes">
+        <div class="my-item">
+          <img class="img-responsive" src="img/flexbox_5_minutes.png" alt="Learn CSS Flexbox in 5 Minutes">
+          <span class="item-desc">Learn CSS Flexbox in 5 Minutes</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://medium.freecodecamp.org/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 3, 5, 8, 10, 14" data-sort="CSS Naming Conventions that Will Save You Hours of Debugging">
+        <div class="my-item">
+          <img class="img-responsive" src="img/css_variables.png" alt="CSS Naming Conventions that Will Save You Hours of Debugging">
+          <span class="item-desc">CSS Naming Conventions that Will Save You Hours of Debugging</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-dns-terminology-components-and-concepts" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 4, 7, 10, 14" data-sort="An Introduction to DNS Terminology, Components, and Concepts">
+        <div class="my-item">
+          <img class="img-responsive" src="img/dns_intro.png" alt="An Introduction to DNS Terminology, Components, and Concepts">
+          <span class="item-desc">An Introduction to DNS Terminology, Components, and Concepts</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://www.inmotionhosting.com/support/website/difference-between-shared-vps-dedicated-hosting" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 4, 7, 10, 14" data-sort="Differences between Shared, VPS, and Dedicated Hosting">
+        <div class="my-item">
+          <img class="img-responsive" src="img/hosting_differences_vps.png" alt="Differences between Shared, VPS, and Dedicated Hosting">
+          <span class="item-desc">Differences between Shared, VPS, and Dedicated Hosting</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://www.mashable.com/2010/10/06/ide-guide/#VU35elW9DSqH" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 10, 14" data-sort="A Beginner's Guide to Integrated Development Environments">
+        <div class="my-item">
+          <img class="img-responsive" src="img/ide_guide.png" alt="A Beginner's Guide to Integrated Development Environments">
+          <span class="item-desc">A Beginner's Guide to Integrated Development Environments</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 10, 14" data-sort="Comparison of integrated development environments">
+        <div class="my-item">
+          <img class="img-responsive" src="img/ide_comparison.png" alt="Comparison of integrated development environments">
+          <span class="item-desc">Comparison of integrated development environments</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://en.wikipedia.org/wiki/Modular_programming" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 10, 14" data-sort="Modular programming">
+        <div class="my-item">
+          <img class="img-responsive" src="img/modular_programming.png" alt="Modular programming">
+          <span class="item-desc">Modular programming</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=vuBFzAdaHDY" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 10, 14" data-sort="Scrum in 16 minutes">
+        <div class="my-item">
+          <img class="img-responsive" src="img/scrum_16_minutes.jpg" alt="Scrum in 16 minutes">
+          <span class="item-desc">Scrum in 16 minutes</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://medium.freecodecamp.org/a-developers-introduction-to-github-1034fa55c0db" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 10, 14" data-sort="A developer’s introduction to GitHub">
+        <div class="my-item">
+          <img class="img-responsive" src="img/github_intro.png" alt="A developer’s introduction to GitHub">
+          <span class="item-desc">A developer’s introduction to GitHub</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://atom.io/packages/open-in-browser" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 5, 10" data-sort="Open in Browser (Atom package)">
+        <div class="my-item">
+          <img class="img-responsive" src="img/atom.png" alt="Open in Browser (Atom package)">
+          <span class="item-desc">Open in Browser (Atom package)</span>
+        </div>
+      </div>
+    </a>
+    <a href="https://www.arduino.cc/" target="_blank">
+      <div class="col-xs-6 col-sm-5 col-md-4 filtr-item" data-category="1, 2, 6, 10, 11, 14" data-sort="Arduino">
+        <div class="my-item">
+          <img class="img-responsive" src="img/arduino.jpg" alt="Arduino">
+          <span class="item-desc">Arduino</span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Hosted Bootstrap jQuery, Popper.js, and JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <!-- Local Filterizr -->
+  <script src="vendor/Filterizr-master/dist/jquery.filterizr.min.js"></script>
+  <!-- Local JavaScript -->
+  <script type="text/jscript" src="js/script.js"></script>
+  <!-- LiveReload -->
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
 </html>
